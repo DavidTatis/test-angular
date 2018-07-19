@@ -1,0 +1,22 @@
+<h1>Lista de articulos seleccionados</h1>
+<div ng-controller="totalController as totalVM" style="padding:10px" >
+<button class="btn btn-primary" ng-click="irArticulos()">Ver Articulos</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad Seleccionada</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="data in totalVM.seleccion">
+      <td>{{data.nombre}}</td>
+      <td>{{parseFloat(data.precio)}}</td>
+      <td>{{data.cantidadSeleccion}}</td>
+
+    </tr>
+  </tbody>
+</table>
+</div>

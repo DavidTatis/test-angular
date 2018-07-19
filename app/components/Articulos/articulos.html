@@ -1,0 +1,29 @@
+<h1>Articulos y sus propiedades</h2>
+<div ng-controller="dataController as dataVM" style="padding:10px;"  ng-init="cambios=false">
+  <br>
+  <button class="btn btn-primary" ng-click="irTotal()">Ver Total</button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Seleccionar</th>
+        <th scopre="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in dataVM.articulos">
+        <td>{{data.nombre}}</td>
+        <td>{{parseFloat(data.precio)}}</td>
+        <td>{{data.stock}}</td>
+        <td><input type="number"  ng-change="cambios=dataVM.functions.inputChange(cambios,{{data.stock}},seleccion)" ng-model="seleccion" ng-disabled="data.stock<=0" style="width:50px" min=0 max={{data.stock}}>
+        </td>
+        <td>
+            <button class="btn btn-outline-primary"  ng-show="cambios" ng-click="dataVM.functions.seleccionar(data.nombre,seleccion)">Guardar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

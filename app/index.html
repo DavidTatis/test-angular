@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="angularKHTest">
+
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My AngularJS Know-How App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="app.css"> -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    </head>
+
+    <body>
+
+        <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div ui-view="main"></div>
+
+        <!-- all bower_components here -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+        <!-- all js app and modules here -->
+        <script src="app.js"></script>
+        <script src="app.route.js"></script>
+        <script src="components/Articulos/articulos.module.js"></script>
+        <script src="components/Total/total.module.js"></script>
+    </body>
+</html>
